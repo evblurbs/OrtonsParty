@@ -1,0 +1,15 @@
+{
+  "name": "OrtonsBachelorParty",
+  "version": "0.0.0",
+  "description": "Hello Exponent!",
+  "author": "johnson.evan1@gmail.com",
+  "private": true,
+  "main": "main.js",
+  "exp": {
+    "sdkVersion": "4.0.0"
+  },
+  "dependencies": {
+    "firebase": "^2.4.2",
+    "react-native": "github:exponentjs/react-native#2016-01-02"
+  }
+}
