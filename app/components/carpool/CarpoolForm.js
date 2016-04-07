@@ -26,10 +26,12 @@ class CarpoolForm extends Component {
     this.firebaseDate = new Firebase("https://ortons-party.firebaseio.com/carpool/" + this.props.name)
     this.firebaseDate.on("value", function(snapshot) {
       var data = snapshot.val()
-      this.setState({
-        isAbleToDrive: data.isAbleToDrive,
-        restrictions: data.restrictions
-      })
+      if(data) {
+        this.setState({
+          isAbleToDrive: data.isAbleToDrive,
+          restrictions: data.restrictions
+        })
+      }
     }.bind(this), function (errorObject) {
       console.log('This read failed: ' + errorObject.code);
     });
@@ -58,7 +60,6 @@ class CarpoolForm extends Component {
     )
   }
   render () {
-    console.log(this.state.saved)
     var submitActive = this.state.isAbleToDrive !== null ? true: false
     var success = this.state.saved ? this.renderSaved() : null
     return (
