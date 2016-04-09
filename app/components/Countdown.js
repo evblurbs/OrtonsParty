@@ -65,8 +65,6 @@ class Countdown extends Component {
       <View style={styles.countdown}>
         <Text style={styles.headerText}>{this.props.title}</Text>
         <View style={styles.countdownWrapper}>
-          <Text style={styles.time}>{this.state.days}</Text>
-          <Text style={styles.timeLabel}>days</Text>
           <Text style={styles.time}>{this.state.hours}</Text>
           <Text style={styles.timeLabel}>hours</Text>
           <Text style={styles.time}>{this.state.minutes}</Text>

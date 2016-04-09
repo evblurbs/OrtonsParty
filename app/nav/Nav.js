@@ -13,10 +13,45 @@ import Prefunk from '../components/Prefunk'
 import Carpool from '../components/Carpool'
 import Events from '../components/Events'
 import Leaderboard from '../components/Leaderboard'
+import BeerPong from '../components/events/BeerPong'
+import Horse from '../components/events/Horse'
+import Tour from '../components/events/Tour'
+import Poker from '../components/events/Poker'
+import Clams from '../components/events/Clams'
+import Skimboarding from '../components/events/SkimBoarding'
+import GeometryWars from '../components/events/GeometryWars'
 
 class Nav extends Component {
   renderScene (route, nav) {
     switch (route.id) {
+      case 'geometry':
+        return (
+          <GeometryWars navigator={nav} />
+        )
+      case 'skim':
+        return (
+          <Skimboarding navigator={nav} />
+        )
+      case 'clams':
+        return (
+          <Clams navigator={nav} />
+        )
+      case 'poker':
+        return (
+          <Poker navigator={nav} />
+        )
+      case 'tour':
+        return (
+          <Tour navigator={nav} />
+        )
+      case 'horse':
+        return (
+          <Horse navigator={nav} />
+        )
+      case 'pong':
+        return (
+          <BeerPong navigator={nav} />
+        )
       case 'leaderboard':
         return (
           <Leaderboard navigator={nav} />

@@ -16,6 +16,7 @@ let HORIZ_SPACE = 12;
 
 import exStyles from '../styles/styles'
 import constants from '../constants/constants'
+import EventLoop from './events/EventLoop'
 
 class Home extends Component {
   _handleLink (routeId) {
@@ -24,6 +25,8 @@ class Home extends Component {
     })
   }
   render () {
+    var currentTime = new Date().getTime()
+    var counter = currentTime > 1460185200000 ? <EventLoop currentTime={currentTime} /> : <Countdown toDate={1460163600000} title="Countdown until we send Jon off in style" />
     return (
       <ExScreen
         title="Orton's Bachelor Party"
@@ -34,7 +37,7 @@ class Home extends Component {
           source={{uri: 'https://s3-us-west-2.amazonaws.com/ortonsparty/ortons-dance-party.png'}}
           style={styles.heroImage}>
         </Image>
-        <Countdown toDate={1460163600000} title="Countdown until we send Jon off in style" />
+        {counter}
         <View style={styles.links}>
           <TouchableHighlight
             style={styles.link1}
